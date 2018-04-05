@@ -1,0 +1,28 @@
+#   ╔═╗╔╦╗╦╔╦╗╔═╗╦═╗┌─┐┌─┐┌┐┌┌─┐┬┌─┐
+#   ║╣  ║║║ ║ ║ ║╠╦╝│  │ ││││├┤ ││ ┬
+#  o╚═╝═╩╝╩ ╩ ╚═╝╩╚═└─┘└─┘┘└┘└  ┴└─┘
+#
+#  http://editorconfig.org/
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 233
+trim_trailing_whitespace = true
+
+[*.{md,csv,tsv}]
+trim_trailing_whitespace = false
+
+[*.{json}]
+indent_size = 4
+indent_style = space
+
+[*/package.json]
+indent_size = 2
+
+[{Makefile,**.mk}]
+indent_style = tab
