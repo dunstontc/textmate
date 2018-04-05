@@ -44,7 +44,7 @@
         },
 
         "pattern": {
-            "description": "An array with the actual rules used to parse the document.",
+            "description": "An actual rule used to parse the document.",
             "type": "array",
             "anyOf": [
                 { "$ref": "#/definitions/match" },
