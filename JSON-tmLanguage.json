@@ -77,7 +77,7 @@
         },
         "scopeName": {
             "description": "This should be a unique name for the grammar.",
-            "$ref": "#definitions/contentName"
+            "$ref": "#/definitions/contentName"
         },
         "firstLineMatch": {
             "description": "A regular expression which is matched against the first line of the document.",
