@@ -34,7 +34,9 @@
         "end":   { "type": "string", "format": "regex" },
 
         "captures":      { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+
         "beginCaptures": { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+        "whileCaptures": { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
         "endCaptures":   { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
 
         "include": {
@@ -53,6 +55,7 @@
                 { "$ref": "#/definitions/end" },
                 { "$ref": "#/definitions/captures" },
                 { "$ref": "#/definitions/beginCaptures" },
+                { "$ref": "#/definitions/whileCaptures" },
                 { "$ref": "#/definitions/endCaptures" },
                 { "$ref": "#/definitions/name" },
                 { "$ref": "#/definitions/include" }
@@ -76,8 +79,8 @@
             "description": "This should be a unique name for the grammar.",
             "$ref": "#definitions/contentName"
         },
-        "command": {
-            "description": "idk",
+        "firstLineMatch": {
+            "description": "A regular expression which is matched against the first line of the document.",
             "type": "string"
         },
         "uuid": {
