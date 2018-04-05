@@ -49,6 +49,7 @@
             "anyOf": [
                 { "$ref": "#/definitions/match" },
                 { "$ref": "#/definitions/begin" },
+                { "$ref": "#/definitions/while" },
                 { "$ref": "#/definitions/end" },
                 { "$ref": "#/definitions/captures" },
                 { "$ref": "#/definitions/beginCaptures" },
