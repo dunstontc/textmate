@@ -1,0 +1,48 @@
+
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://gist.github.com/dunstontc/1e30c3a454b252123d8101c8059855c3",
+    "description": "See: https://github.com/Microsoft/vscode/tree/master/extensions",
+    "type": "object",
+    "required": [
+        "name",
+        "scopeName",
+        "patterns"
+    ],
+    "definitions": {
+        
+        "scope": { "type":"array" },
+        
+        "match": { "type": "string", "format": "regex" },
+        "begin": { "type": "string", "format": "regex" },
+        "end":   { "type": "string", "format": "regex" },
+        
+        "scopeName": { "type":"string", "pattern": "[a-zA-Z\\-.]+"  },
+        "include":   { "type":"string", "pattern": "#[a-zA-Z\\-.]+" },
+
+        "beginCaptures": { "type": "object", "items": { "$ref": "#/definitions/scopeName" } },
+        "endCaptures":   { "type": "object", "items": { "$ref": "#/definitions/scopeName" } },
+        "captures":      { "type": "object", "items": { "$ref": "#/definitions/scopeName" } },
+
+        "pattern": {
+            "type": "object",
+            "anyOf": [
+                { "$ref": "#/definitions/match" },
+                { "$ref": "#/definitions/begin" },
+                { "$ref": "#/definitions/end" },
+                { "$ref": "#/definitions/beginCaptures" },
+                { "$ref": "#/definitions/endCaptures" }
+                { "$ref": "#/definitions/scopeName" },
+            ]
+        }
+    },
+    "properties": {
+        "version":    { "type": "string" },
+        "name":       { "type": "string" },
+        "scopeName":  { "type": "string" },
+        "command":    { "type": "string", "description": "idk" },
+        "uuid":       { "type": "string", "description": "DEPRECATED" },
+        "patterns":   { "type": "array",  "items": { "$ref": "#/definitions/pattern" } },
+        "repository": { "type": "object" }
+    }
+}
