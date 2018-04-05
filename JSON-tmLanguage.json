@@ -11,51 +11,88 @@
     ],
     "definitions": {
 
-        "contentName": { "type":"string", "pattern": "[a-zA-Z\\-.]+" },
-        "include":   { "type":"string", "pattern": "#?[a-zA-Z\\-.]+" },
+        "contentName": {
+            "description": "Assigns the name to the text between what is matched by the begin/end patterns.",
+            "type":"string",
+            "pattern": "[a-zA-Z\\-.]+"
+        },
+
+        "name": {
+            "description": "",
+            "type":"string",
+            "pattern": "[a-zA-Z\\-.]+"
+        },
+
+        "include": {
+            "description": "Allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository.",
+            "type":"string",
+            "pattern": "#?[a-zA-Z\\-.]+"
+        },
+
         "match": {
             "description": "A regular expression which is used to identify the portion of text to which the name should be assigned.",
             "type": "string",
             "format": "regex"
         },
+
         "begin": { "type": "string", "format": "regex" },
         "while": { "type": "string", "format": "regex" },
         "end":   { "type": "string", "format": "regex" },
 
-
-        "captures":      { "type": "object", "items": { "$ref": "#/definitions/scopeName" } },
-        "beginCaptures": { "type": "object", "items": { "$ref": "#/definitions/scopeName" } },
-        "endCaptures":   { "type": "object", "items": { "$ref": "#/definitions/scopeName" } },
+        "captures":      { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+        "beginCaptures": { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+        "endCaptures":   { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
 
         "pattern": {
+            "description": "An array with the actual rules used to parse the document.",
             "type": "array",
             "anyOf": [
                 { "$ref": "#/definitions/match" },
                 { "$ref": "#/definitions/begin" },
                 { "$ref": "#/definitions/end" },
+                { "$ref": "#/definitions/captures" },
                 { "$ref": "#/definitions/beginCaptures" },
                 { "$ref": "#/definitions/endCaptures" },
-                { "$ref": "#/definitions/contentName" }
+                { "$ref": "#/definitions/name" },
+                { "$ref": "#/definitions/include" }
             ]
         }
+
     },
     "properties": {
-        "version":    {
-          "type": "string"
+        "information_for_contributors": {
+            "type": "string"
         },
-        "name":       {
-          "description": "The name which gets assigned to the portion matched.",
-          "type": "string"
+        "version": {
+            "description": "SHA of the latest commit containing an update to this definition.",
+            "type": "string"
         },
-        "scopeName":  {
-          "$ref": "#definitions/scopeName"
+        "name": {
+            "description": "A nicely formatted display name for the grammar.",
+            "type": "string"
         },
-        "command":    { "type": "string", "description": "idk" },
-        "uuid":       { "type": "string", "description": "DEPRECATED" },
-        "patterns":   { "type": "array",  "items": { "$ref": "#/definitions/pattern" } },
+        "scopeName": {
+            "description": "This should be a unique name for the grammar.",
+            "$ref": "#definitions/contentName"
+        },
+        "command": {
+            "description": "idk",
+            "type": "string"
+        },
+        "uuid": {
+            "description": "DEPRECATED",
+            "type": "string"
+        },
+        "patterns": {
+            "description": "An array with the actual rules used to parse the document.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/pattern"
+            }
+        },
         "repository": {
-          "description": "Allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository.",
-          "type": "object"
+            "description": "Allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository.",
+            "type": "object"
         }
     }
 }
