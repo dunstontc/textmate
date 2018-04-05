@@ -23,6 +23,8 @@
   - This should be a unique name for the grammar.
 - `fileTypes`
   - This is an array of file type extensions that the grammar should (by default) be used with. 
+- `firstLineMatch`
+  - A regular expression which is matched against the first line of the document (when it is first loaded).
 - `patterns`
   - An array with the actual rules used to parse the document.
 - `repository`
@@ -55,6 +57,7 @@
   - [Textmate Manual - Scope Selectors](https://manual.macromates.com/en/scope_selectors)
 ### VSCode Specific
 - [Microsoft/vscode-textmate](https://github.com/Microsoft/vscode-textmate)
+  - [types.ts](https://github.com/Microsoft/vscode-textmate/blob/master/src/types.ts)
 - [extensionAPI - language-support](https://code.visualstudio.com/docs/extensionAPI/language-support)
 ### Examples
 - [Microsoft/vscode/extensions](https://github.com/Microsoft/vscode/tree/master/extensions)
