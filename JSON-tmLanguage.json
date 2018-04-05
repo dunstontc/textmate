@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "https://raw.githubusercontent.com/dunstontc/textmate/master/JSON-tmLanguage.json",
+    "id": "https://raw.githubusercontent.com/dunstontc/textmate/master/JSON-tmLanguage.json",
     "title": "JSON schema for *-tmLanguage.json language definitions used by VSCode.",
     "description": "See: https://github.com/Microsoft/vscode/tree/master/extensions",
     "type": "object",
