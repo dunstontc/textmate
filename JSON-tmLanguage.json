@@ -47,7 +47,6 @@
 
         "pattern": {
             "description": "An actual rule used to parse the document.",
-            "type": "array",
             "anyOf": [
                 { "$ref": "#/definitions/match" },
                 { "$ref": "#/definitions/begin" },
@@ -65,7 +64,7 @@
     },
     "properties": {
         "information_for_contributors": {
-            "type": "string"
+            "type": "array"
         },
         "version": {
             "description": "SHA of the latest commit containing an update to this definition.",
