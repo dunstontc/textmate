@@ -11,22 +11,16 @@
     ],
     "definitions": {
 
+        "name": {
+            "description": "The name which gets assigned to the portion matched.",
+            "type":"string",
+            "pattern": "[a-zA-Z\\-.]+"
+        },
+
         "contentName": {
             "description": "Assigns the name to the text between what is matched by the begin/end patterns.",
             "type":"string",
             "pattern": "[a-zA-Z\\-.]+"
-        },
-
-        "name": {
-            "description": "",
-            "type":"string",
-            "pattern": "[a-zA-Z\\-.]+"
-        },
-
-        "include": {
-            "description": "Allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository.",
-            "type":"string",
-            "pattern": "#?[a-zA-Z\\-.]+"
         },
 
         "match": {
@@ -42,6 +36,12 @@
         "captures":      { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
         "beginCaptures": { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
         "endCaptures":   { "type": "object", "items": { "$ref": "#/definitions/contentName" } },
+
+        "include": {
+            "description": "Allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository.",
+            "type":"string",
+            "pattern": "#?[a-zA-Z\\-.]+"
+        },
 
         "pattern": {
             "description": "An array with the actual rules used to parse the document.",

@@ -17,7 +17,7 @@
 ## Textmate Language Grammars
 - `name`
   - This should be a unique name for the grammar, following the convention of being a dot-separated name where each new (left-most) part specializes the name. 
-  - Normally it would be a two-part name where the first is either text or source and the second is the name of the language or document type. 
+  - Normally it would be a two-part name where the first is either `text` or `source` and the second is the name of the language or document type. 
   - But if you are specializing an existing type, you probably want to derive the name from the type you are specializing. 
 - `scopeName`
   - This should be a unique name for the grammar.
