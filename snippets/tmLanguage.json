@@ -1,0 +1,27 @@
+{
+  "match": {
+		"prefix": "match",
+		"body": ["\"match\": \"$1\"$0"],
+		"description": "A regular expression which is used to identify the portion of text to which the name should be assigned."
+	},
+  "include": {
+		"prefix": "include",
+		"body": ["\"include\": \"#$1\"$0"],
+		"description": "Allows you to reference a different language, recursively reference the grammar itself or a rule declared in this file’s repository."
+	},
+  "scopeName": {
+		"prefix": "scopeName",
+		"body": ["\"scopeName\": \"source.$1\"$0"],
+		"description": "This should be a unique name for the grammar."
+  },
+  "scope": {
+		"prefix": "scope",
+		"body": [
+        "\"$1\": {",
+        "\"patterns\": [$0]",
+        "}"
+    ],
+		"description": "A new language scope containing an array of patterns."
+  }
+
+}

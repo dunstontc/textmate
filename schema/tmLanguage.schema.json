@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "id": "https://raw.githubusercontent.com/dunstontc/textmate/master/JSON-tmLanguage.json",
-    "title": "JSON schema for *-tmLanguage.json language definitions used by VSCode.",
+    "id": "https://raw.githubusercontent.com/dunstontc/textmate/master/tmLanguage.schema.json",
+    "title": "JSON schema for *.tmLanguage.json language definitions used by VSCode.",
     "description": "See: https://github.com/Microsoft/vscode/tree/master/extensions",
     "type": "object",
     "required": [
@@ -76,7 +76,8 @@
         },
         "scopeName": {
             "description": "This should be a unique name for the grammar.",
-            "$ref": "#/definitions/contentName"
+            "type":"string",
+            "pattern": "[a-zA-Z\\-.]+"
         },
         "firstLineMatch": {
             "description": "A regular expression which is matched against the first line of the document.",
@@ -90,6 +91,7 @@
             "description": "An array with the actual rules used to parse the document.",
             "type": "array",
             "items": {
+              "type": "object",
                 "$ref": "#/definitions/pattern"
             }
         },

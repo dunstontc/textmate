@@ -1,4 +1,4 @@
-# Textmate Language Grammars
+# TextMate Language Grammars
 
 [source](https://manual.macromates.com/en/language_grammars#naming_conventions.html)
 

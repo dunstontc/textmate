@@ -5,7 +5,7 @@
 <!-- TOC -->
 
 - [textmate](#textmate)
-    - [Textmate Language Grammars](#textmate-language-grammars)
+    - [TextMate Language Grammars](#textmate-language-grammars)
         - [Sources](#sources)
         - [VSCode Specific](#vscode-specific)
         - [Examples](#examples)
@@ -14,7 +14,7 @@
 
 <!-- /TOC -->
 
-## Textmate Language Grammars
+## TextMate Language Grammars
 - `name`
   - This should be a unique name for the grammar, following the convention of being a dot-separated name where each new (left-most) part specializes the name. 
   - Normally it would be a two-part name where the first is either `text` or `source` and the second is the name of the language or document type. 
@@ -52,9 +52,9 @@
 
 ### Sources
 - [Sublime3 - Scope Naming](https://www.sublimetext.com/docs/3/scope_naming.html)
-- [Textmate Manual - Language Grammars](https://manual.macromates.com/en/language_grammars.html)
-- [Textmate - Intro to Scopes](http://blog.macromates.com/2005/introduction-to-scopes/)
-  - [Textmate Manual - Scope Selectors](https://manual.macromates.com/en/scope_selectors)
+- [TextMate Manual - Language Grammars](https://manual.macromates.com/en/language_grammars.html)
+- [TextMate - Intro to Scopes](http://blog.macromates.com/2005/introduction-to-scopes/)
+  - [TextMate Manual - Scope Selectors](https://manual.macromates.com/en/scope_selectors)
 ### VSCode Specific
 - [Microsoft/vscode-textmate](https://github.com/Microsoft/vscode-textmate)
   - [types.ts](https://github.com/Microsoft/vscode-textmate/blob/master/src/types.ts)
@@ -67,6 +67,8 @@
   - [markdown.tmLanguage.json](https://github.com/Microsoft/vscode/blob/master/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json)
   - [MagicPython.tmLanguage.json](https://github.com/Microsoft/vscode/blob/master/extensions/python/syntaxes/MagicPython.tmLanguage.json)
   - [swift.tmLanguage.json](https://github.com/Microsoft/vscode/blob/master/extensions/swift/syntaxes/swift.tmLanguage.json)
+  - [javascript.tmLanguage.json](https://github.com/Microsoft/vscode/blob/master/extensions/javascript/syntaxes/JavaScript.tmLanguage.json)
+
 
 
 
